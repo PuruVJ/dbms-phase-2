@@ -101,7 +101,9 @@
 		</form>
 	</div>
 </body>
+/* checking an issue */
 
+<!-- working on an issue -->
 <style>
 	:root {
 		font-size: 65%;
@@ -332,5 +334,6 @@
 		background-color: #fff;
 		border: 2px solid #fff;
 		/* border-radius: 20px; */
+		/* working on an issue */
 	}
 </style>
