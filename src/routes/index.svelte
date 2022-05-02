@@ -1,6 +1,12 @@
 <script>
 	import 'normalize.css';
+	import { page } from '$app/stores';
+	import { enhance } from '$lib/form';
 </script>
+
+<svelte:head>
+	<title>Book ticket</title>
+</svelte:head>
 
 <body>
 	<nav class="navbar">
@@ -42,8 +48,56 @@
 
 	<div class="tickets">
 		<h1 class="trailer">TICKETS</h1>
-		<form action="">
-			<!--  -->
+
+		<form
+			class="new"
+			action="."
+			method="post"
+			use:enhance={{
+				result: async ({ form }) => {
+					console.log(form);
+					// form.reset();
+				}
+			}}
+		>
+			<label>
+				Date
+				<input type="date" name="movie_date" aria-label="Choose date" placeholder="Movie date" />
+			</label>
+
+			<br /><br />
+
+			<label>
+				Time
+				<input type="time" name="movie_time" aria-label="Choose time" placeholder="Movie time" />
+			</label>
+
+			<br /><br />
+
+			<label>
+				Screen name
+				<input type="text" name="screen_name" aria-label="Screen name" placeholder="Screen name" />
+			</label>
+
+			<br /><br />
+
+			<label>
+				Seat no
+				<input type="text" name="seat_no" aria-label="Seat no" placeholder="Seat no" />
+			</label>
+
+			<br /><br />
+
+			<label>
+				Theatre
+				<input type="text" name="theatre" aria-label="Theatre" placeholder="Theatre" />
+			</label>
+
+			<br /><br /><br />
+			<div class="btn--wrapper">
+				<button type="submit" class="btn btn-secondary">SUBMIT</button>
+				<button type="reset" class="btn btn-primary">RESET</button>
+			</div>
 		</form>
 	</div>
 </body>
@@ -57,6 +111,11 @@
 		width: 100vw;
 		box-sizing: border-box;
 		overflow-x: hidden;
+
+		/* background-image: './assets/pat.png';
+		background-position: top right;
+		background-size: cover;
+		background-repeat: no-repeat; */
 	}
 
 	/* ######################################################################################## */
@@ -217,4 +276,61 @@
 	/* ######################################################################################## */
 	/* ###########################          PAGE TICKETS       ################################ */
 	/* ######################################################################################## */
+
+	div.tickets {
+		width: 100vw;
+		box-sizing: border-box;
+		padding-right: 10vw;
+		padding-left: 10vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	form {
+		width: 60vw;
+
+		margin: 0 auto;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	input {
+		width: 60vw;
+		height: 20px;
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 600;
+		padding: 7px 30px;
+	}
+
+	input:hover {
+		cursor: pointer;
+	}
+
+	div.btn-wrapper {
+		width: 100%;
+	}
+
+	button {
+		font-size: 1.6rem;
+		padding: 5px 25px;
+		text-decoration: none;
+		text-transform: capitalize;
+		font-weight: 700;
+		color: #fff;
+		border: 2px solid #fff;
+		/* border-radius: 20px; */
+		transform: scale(0.8);
+		margin-right: 15px;
+	}
+
+	button.btn-primary {
+		color: #000;
+		background-color: #fff;
+		border: 2px solid #fff;
+		/* border-radius: 20px; */
+	}
 </style>
