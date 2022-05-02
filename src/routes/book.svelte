@@ -9,7 +9,7 @@
 
 <form
 	class="new"
-	action="/ticket/{$page.params.id}"
+	action="."
 	method="post"
 	use:enhance={{
 		result: async ({ form }) => {
