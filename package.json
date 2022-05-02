@@ -17,6 +17,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^1.35.2"
+		"@supabase/supabase-js": "^1.35.2",
+		"normalize.css": "^8.0.1"
 	}
 }
