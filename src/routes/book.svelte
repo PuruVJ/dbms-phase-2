@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	import { enhance } from '$lib/form';
 </script>
 
@@ -9,7 +8,7 @@
 
 <form
 	class="new"
-	action="."
+	action="/book"
 	method="post"
 	use:enhance={{
 		result: async ({ form }) => {
