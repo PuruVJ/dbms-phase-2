@@ -2,8 +2,6 @@
 	import 'normalize.css';
 </script>
 
-/*########################### HTML CONTENT ################################ */
-
 <body>
 	<nav class="navbar">
 		<li class="logo">
@@ -49,8 +47,6 @@
 		</form>
 	</div>
 </body>
-
-/*########################### STYLES ################################ */
 
 <style>
 	:root {
