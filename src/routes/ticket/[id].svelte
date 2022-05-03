@@ -32,8 +32,6 @@ theatre: string}}*/
 			<h1>BATMAN</h1>
 		</div>
 
-		<h1>Ticket info</h1>
-
 		<div class="qrcode">
 			{#if qrcodeURL}
 				<img src={qrcodeURL} alt="qrcode" />
