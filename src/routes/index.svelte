@@ -11,6 +11,7 @@
 <body>
 	<nav class="navbar">
 		<li class="logo">
+			<!-- svelte-ignore a11y-invalid-attribute -->
 			<a href="#"><img src="./assets/image.svg" alt="" /></a>
 		</li>
 		<li class=""><a href="#trailers">Trailers</a></li>
@@ -18,45 +19,39 @@
 		<li><a href="#contact">Contact</a></li>
 	</nav>
 
-<div class="home">
-	<div class="content">
-		<h2 class="header1">I AM</h2>
-		<h1 class="header2">VENGEANCE</h1>
-		<div class="btn--wrapper">
-			<!-- svelte-ignore a11y-invalid-attribute -->
-			<a href="#trailers" class="btn btn-primary">Watch Trailer</a>
-			<!-- svelte-ignore a11y-invalid-attribute -->
-			<a href="#tickets" class="btn btn-secondary">Book Tickets</a>
+	<div class="home">
+		<div class="content">
+			<h2 class="header1">I AM</h2>
+			<h1 class="header2">VENGEANCE</h1>
+			<div class="btn--wrapper">
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#trailers" class="btn btn-primary">Watch Trailer</a>
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#tickets" class="btn btn-secondary">Book Tickets</a>
+			</div>
+			<h1 class="movie_title">THE BATMAN (2022)</h1>
+
+			<p class="summary">
+				When the Riddler, a sadistic serial killer, begins murdering key political figures in
+				Gotham, Batman is forced to investigate the city's hidden corruption and question his
+				family's involvement.
+			</p>
 		</div>
-		<h1 class="movie_title">THE BATMAN (2022)</h1>
 
-		<p class="summary">
-			When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham,
-			Batman is forced to investigate the city's hidden corruption and question his family's
-			involvement.
-		</p>
+		<div class="image_poster">
+			<img src="./assets/POSTER.svg" alt="batman" />
+		</div>
 	</div>
-
-    <div class="image_poster">
-        <img src="./assets/POSTER.svg" alt="batman" />
-    </div>
-</div>
-
-
 
 	<div class="page--trailer" id="trailers">
 		<h1 class="trailer">TRAILERS & CLIPS</h1>
 		<div class="grid--wrapper-tr">
 			<!-- svelte-ignore a11y-invalid-attribute -->
 			<!-- svelte-ignore a11y-missing-attribute -->
-			<iframe width="420" height="315"
-                src="https://www.youtube.com/embed/mqqft2x_Aa4">
-            </iframe>
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/mqqft2x_Aa4" />
 			<!-- svelte-ignore a11y-invalid-attribute -->
 			<!-- svelte-ignore a11y-missing-attribute -->
-			<iframe width="420" height="315"
-                src="https://www.youtube.com/embed/u34gHaRiBIU">
-            </iframe>
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/u34gHaRiBIU" />
 		</div>
 	</div>
 
@@ -120,28 +115,25 @@
 		</form>
 	</div>
 
-    <div class="footer" id="contact">
-        <h1 class="trailer">CONTACT</h1>
+	<div class="footer" id="contact">
+		<h1 class="trailer">CONTACT</h1>
 
-        <div class="contact-links">
-            <a href="mailto:batman2022@gmail.com" target="_blank" class="link">
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <img src="./assets/mail.svg" width="64" height="64" />
-            </a>
+		<div class="contact-links">
+			<a href="mailto:batman2022@gmail.com" target="_blank" class="link">
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<img src="./assets/mail.svg" width="64" height="64" />
+			</a>
 
-            <a href="tel:9848012346" target="_blank" class="link">
-              <!-- svelte-ignore a11y-missing-attribute -->
-              <img src="./assets/call.png" width="64" height="64" />
-            </a>
-          </div>
+			<a href="tel:9848012346" target="_blank" class="link">
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<img src="./assets/call.png" width="64" height="64" />
+			</a>
+		</div>
 
-          <div class="cr">
-           <p> © All copyrights are reserved </p>
-          </div>
-    </div>
-
-
-
+		<div class="cr">
+			<p>© All copyrights are reserved</p>
+		</div>
+	</div>
 </body>
 
 <style>
@@ -177,22 +169,24 @@
 		padding-right: 10vw;
 		padding-left: 10vw;
 
-        background: radial-gradient(50% 50% at 50% 50%, rgba(150, 0, 0, 0.5) 0%, rgba(150, 0, 0, 0) 100%);
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
 	}
 
+	.home {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-    .home {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .image_poster img {
-        width: 400px;
-        height: 400px;
-        padding-right: 30px;
- 
-    }
+	.image_poster img {
+		width: 400px;
+		height: 400px;
+		padding-right: 30px;
+	}
 
 	h2.header1 {
 		padding: 0;
@@ -207,12 +201,12 @@
 		margin: 0;
 		font-size: 6rem;
 		font-style: italic;
-        color: #fff;
+		color: #fff;
 	}
 
-    h1.header2:hover {
-        color: #ff0506;
-    }
+	h1.header2:hover {
+		color: #ff0506;
+	}
 
 	nav.navbar {
 		height: 64px;
@@ -232,9 +226,9 @@
 		/* border-bottom: 2px solid rgba(255, 3, 3, 0.308); */
 	}
 
-    nav a{
-        color: #fff;
-    }
+	nav a {
+		color: #fff;
+	}
 
 	nav li {
 		font-size: 1.4rem;
@@ -243,9 +237,9 @@
 		list-style-type: none;
 	}
 
-    nav li a:hover {
-        color: #ff0506;
-    }
+	nav li a:hover {
+		color: #ff0506;
+	}
 
 	nav img {
 		align-self: center;
@@ -253,6 +247,7 @@
 		height: 80px;
 		text-shadow: 2px 2px #000;
 		margin-right: 40vw;
+		padding-top: 15px;
 		/* filter: invert(1); */
 		/* background-color: #960000; */
 	}
@@ -305,13 +300,17 @@
 		box-sizing: border-box;
 		padding-right: 10vw;
 		padding-left: 10vw;
-        padding-top: 100px;
-        background: radial-gradient(50% 50% at 50% 50%, rgba(150, 0, 0, 0.5) 0%, rgba(150, 0, 0, 0) 100%);
+		padding-top: 100px;
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
 	}
 
 	h1.trailer {
 		color: #fff;
-        padding-bottom: 20px;
+		padding-bottom: 20px;
 		font-weight: 800;
 		font-size: 4.5rem;
 		font-family: 'Secular One', sans-serif;
@@ -336,7 +335,6 @@
 		text-decoration: none;
 	}
 
-
 	/* ######################################################################################## */
 	/* ###########################          PAGE TICKETS       ################################ */
 	/* ######################################################################################## */
@@ -346,12 +344,16 @@
 		box-sizing: border-box;
 		padding-right: 10vw;
 		padding-left: 10vw;
-        padding-top: 100px;
+		padding-top: 100px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 
-        background: radial-gradient(50% 50% at 50% 50%, rgba(150, 0, 0, 0.5) 0%, rgba(150, 0, 0, 0) 100%);
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
 	}
 
 	form {
@@ -377,9 +379,9 @@
 		cursor: pointer;
 	}
 
-	div.btn-wrapper {
+	/* div.btn-wrapper {
 		width: 100%;
-	}
+	} */
 
 	button {
 		font-size: 1.6rem;
@@ -407,39 +409,40 @@
 		background-color: #000;
 	}
 
-    /* ######################################################################################## */
+	/* ######################################################################################## */
 	/* ###########################          CONTACT US         ################################ */
 	/* ######################################################################################## */
 
-    .footer {
-        width: 100vw;
+	.footer {
+		width: 100vw;
 		box-sizing: border-box;
 		padding-right: 10vw;
 		padding-left: 10vw;
-        padding-top:100px;
+		padding-top: 100px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 
-        background: radial-gradient(50% 50% at 50% 50%, rgba(150, 0, 0, 0.3) 0%, rgba(150, 0, 0, 0) 100%);
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.3) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
+	}
 
-    }
+	.contact-links {
+		margin: 0 auto;
+		align-items: center;
+		filter: invert(1);
+	}
 
-    .contact-links {
-        margin: 0 auto;
-        align-items: center;
-        filter: invert(1);
-    }
+	.contact-links img {
+		padding: 20px;
+		padding-bottom: 60px;
+	}
 
-    .contact-links img {
-        padding: 20px;
-        padding-bottom: 60px;
-    }
-
-    .cr{
-        color: #fff;
-        margin: auto;
-    }
-
-
+	.cr {
+		color: #fff;
+		margin: auto;
+	}
 </style>
