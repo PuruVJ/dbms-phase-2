@@ -21,12 +21,18 @@ theatre: string}}*/
 	});
 </script>
 
+<svelte:head>
+	<title>Your Ticket</title>
+</svelte:head>
+
 <div class="ticket">
 	<div class="maingrid">
 		<div class="title">
 			<header>THE BATMAN 2022</header>
 			<h1>BATMAN</h1>
 		</div>
+
+		<h1>Ticket info</h1>
 
 		<div class="qrcode">
 			{#if qrcodeURL}
