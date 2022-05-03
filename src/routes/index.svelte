@@ -66,7 +66,7 @@
 			action="/book"
 			method="post"
 			use:enhance={{
-				result: async ({ form, response }) => {
+				result: async ({ response }) => {
 					success = true;
 					// @ts-ignore
 					({ id } = await response.json());
