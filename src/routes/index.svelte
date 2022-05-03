@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="image_poster">
-			<img src="./assets/POSTER.svg" alt="batman" />
+			<img src="./assets/pat.png" class="Hero--img" alt="batman" />
 		</div>
 	</div>
 
@@ -73,8 +73,8 @@
 				}
 			}}
 		>
-			{#if success}
-				Ticket booking successful
+			{#if !success}
+				<p class="message">Ticket booking successful</p>
 			{/if}
 
 			<label>
@@ -178,8 +178,8 @@
 
 	div.content {
 		color: #fff;
-		display: flex;
-		flex-direction: column;
+		/* display: flex;
+		flex-direction: column; */
 		min-height: 100vh;
 		padding-right: 10vw;
 		padding-left: 10vw;
@@ -306,6 +306,10 @@
 		padding-left: 15px;
 	}
 
+	img.Hero--img {
+		transform: scale(1.3) translateX(-20%) translateY(40px);
+	}
+
 	/* ######################################################################################## */
 	/* ###########################          TRAILER PAGE       ################################ */
 	/* ######################################################################################## */
@@ -422,6 +426,9 @@
 		color: #fff;
 		border: 2px solid #fff;
 		background-color: #000;
+	}
+
+	p.message {
 	}
 
 	/* ######################################################################################## */
