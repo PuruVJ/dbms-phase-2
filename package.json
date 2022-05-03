@@ -19,7 +19,10 @@
 	"type": "module",
 	"dependencies": {
 		"@supabase/supabase-js": "^1.35.2",
+		"@types/nodemailer": "^6.4.4",
 		"date-fns": "^2.28.0",
+		"nodemailer": "^6.7.4",
+		"nodemailer-promise": "^2.0.0",
 		"normalize.css": "^8.0.1",
 		"qrcode": "^1.5.0"
 	}

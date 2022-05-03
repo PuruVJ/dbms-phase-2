@@ -3,6 +3,8 @@
 	import { enhance } from '$lib/form';
 
 	let success = false;
+	let id = '';
+	$: console.log(success);
 </script>
 
 <svelte:head>
@@ -64,17 +66,21 @@
 			action="/book"
 			method="post"
 			use:enhance={{
-				result: async ({ form }) => {
+				result: async ({ form, response }) => {
 					success = true;
-					form.reset();
+					// @ts-ignore
+					({ id } = await response.json());
 				},
-				pending: async ({ data }) => {
-					success = false;
+				pending: async ({}) => {
+					// success = false;
 				}
 			}}
 		>
 			{#if success}
-				<p class="message">Ticket booking successful</p>
+				<p class="message">
+					Ticket booking successful. You can find your ticket
+					<a href="/ticket/{id}" target="_blank"> here </a>
+				</p>
 			{/if}
 
 			<label>
