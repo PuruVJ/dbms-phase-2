@@ -1,11 +1,12 @@
 <script>
 	// import 'normalize.css';
-	import { page } from '$app/stores';
 	import { enhance } from '$lib/form';
+
+	let success = false;
 </script>
 
 <svelte:head>
-	<title>Book ticket</title>
+	<title>The Batman</title>
 </svelte:head>
 
 <body>
@@ -60,15 +61,29 @@
 
 		<form
 			class="new"
-			action="."
+			action="/book"
 			method="post"
 			use:enhance={{
 				result: async ({ form }) => {
-					console.log(form);
-					// form.reset();
+					success = true;
+					form.reset();
+				},
+				pending: async ({ data }) => {
+					success = false;
 				}
 			}}
 		>
+			{#if success}
+				Ticket booking successful
+			{/if}
+
+			<label>
+				Email
+				<input type="email" name="email" aria-label="Email" placeholder="Email" />
+			</label>
+
+			<br /><br />
+
 			<label>
 				Date
 				<input type="date" name="movie_date" aria-label="Choose date" placeholder="Movie date" />
@@ -87,7 +102,7 @@
 				Screen name
 				<input
 					type="text"
-					name="screen_number"
+					name="screen_name"
 					aria-label="Screen number"
 					placeholder="Screen number"
 				/>

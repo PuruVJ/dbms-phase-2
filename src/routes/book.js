@@ -9,7 +9,8 @@ export const post = async ({ request }) => {
 		movie_time: new Date(`${form.get('movie_date')} ${form.get('movie_time')}`).toISOString(),
 		screen_name: form.get('screen_name'),
 		seat_no: form.get('seat_no'),
-		theatre: form.get('theatre')
+		theatre: form.get('theatre'),
+		email: form.get('email')
 	});
 
 	return {};
