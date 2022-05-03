@@ -73,7 +73,7 @@
 				}
 			}}
 		>
-			{#if !success}
+			{#if success}
 				<p class="message">Ticket booking successful</p>
 			{/if}
 
@@ -432,6 +432,9 @@
 	}
 
 	p.message {
+		font-size: 2rem;
+		color: #fff;
+		font-weight: 700;
 	}
 
 	/* ######################################################################################## */
