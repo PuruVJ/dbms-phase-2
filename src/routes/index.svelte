@@ -1,5 +1,5 @@
 <script>
-	import 'normalize.css';
+	// import 'normalize.css';
 	import { page } from '$app/stores';
 	import { enhance } from '$lib/form';
 </script>
@@ -11,42 +11,51 @@
 <body>
 	<nav class="navbar">
 		<li class="logo">
-			<img src="./assets/batman-logo.png" alt="" />
+			<!-- svelte-ignore a11y-invalid-attribute -->
+			<a href="#"><img src="./assets/image.svg" alt="" /></a>
 		</li>
-		<li class="">Link1</li>
-		<li>Link2</li>
-		<li>Link3</li>
+		<li class=""><a href="#trailers">Trailers</a></li>
+		<li><a href="#tickets">Tickets</a></li>
+		<li><a href="#contact">Contact</a></li>
 	</nav>
 
-	<div class="content">
-		<h2 class="header1">I AM</h2>
-		<h1 class="header2">VENGEANCE</h1>
-		<div class="btn--wrapper">
-			<a href="#" class="btn btn-primary">Watch Trailer</a>
-			<a href="#" class="btn btn-secondary">Book Ticket</a>
+	<div class="home">
+		<div class="content">
+			<h2 class="header1">I AM</h2>
+			<h1 class="header2">VENGEANCE</h1>
+			<div class="btn--wrapper">
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#trailers" class="btn btn-primary">Watch Trailer</a>
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#tickets" class="btn btn-secondary">Book Tickets</a>
+			</div>
+			<h1 class="movie_title">THE BATMAN (2022)</h1>
+
+			<p class="summary">
+				When the Riddler, a sadistic serial killer, begins murdering key political figures in
+				Gotham, Batman is forced to investigate the city's hidden corruption and question his
+				family's involvement.
+			</p>
 		</div>
-		<p class="summary">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla rem aspernatur doloribus
-			placeat porro incidunt voluptate mollitia eum officia odio soluta, error minus fugiat
-			praesentium!
-		</p>
+
+		<div class="image_poster">
+			<img src="./assets/POSTER.svg" alt="batman" />
+		</div>
 	</div>
 
-	<div class="page--trailer">
-		<h1 class="trailer">TRAILER</h1>
+	<div class="page--trailer" id="trailers">
+		<h1 class="trailer">TRAILERS & CLIPS</h1>
 		<div class="grid--wrapper-tr">
-			<a href="#"
-				><img src="./assets/thumb1.jpeg" class="thumb" alt="" />
-				<p class="thumb-link">The Batman 2022 Trailer</p>
-			</a>
-			<a href="#"
-				><img src="./assets/thumb2.jpeg" class="thumb" alt="" />
-				<p class="thumb-link">The Batman 2022 Trailer</p>
-			</a>
+			<!-- svelte-ignore a11y-invalid-attribute -->
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/mqqft2x_Aa4" />
+			<!-- svelte-ignore a11y-invalid-attribute -->
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/u34gHaRiBIU" />
 		</div>
 	</div>
 
-	<div class="tickets">
+	<div class="tickets" id="tickets">
 		<h1 class="trailer">TICKETS</h1>
 
 		<form
@@ -76,7 +85,12 @@
 
 			<label>
 				Screen name
-				<input type="text" name="screen_name" aria-label="Screen name" placeholder="Screen name" />
+				<input
+					type="text"
+					name="screen_number"
+					aria-label="Screen number"
+					placeholder="Screen number"
+				/>
 			</label>
 
 			<br /><br />
@@ -95,15 +109,33 @@
 
 			<br /><br /><br />
 			<div class="btn--wrapper">
-				<button type="submit" class="btn btn-secondary">SUBMIT</button>
-				<button type="reset" class="btn btn-primary">RESET</button>
+				<button type="submit" class="btn btn-secondary">Submit</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
 			</div>
 		</form>
 	</div>
-</body>
-/* checking an issue */
 
-<!-- working on an issue -->
+	<div class="footer" id="contact">
+		<h1 class="trailer">CONTACT</h1>
+
+		<div class="contact-links">
+			<a href="mailto:batman2022@gmail.com" target="_blank" class="link">
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<img src="./assets/mail.svg" width="64" height="64" />
+			</a>
+
+			<a href="tel:9848012346" target="_blank" class="link">
+				<!-- svelte-ignore a11y-missing-attribute -->
+				<img src="./assets/call.png" width="64" height="64" />
+			</a>
+		</div>
+
+		<div class="cr">
+			<p>© All copyrights are reserved</p>
+		</div>
+	</div>
+</body>
+
 <style>
 	:root {
 		font-size: 65%;
@@ -136,6 +168,24 @@
 		min-height: 100vh;
 		padding-right: 10vw;
 		padding-left: 10vw;
+
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
+	}
+
+	.home {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.image_poster img {
+		width: 400px;
+		height: 400px;
+		padding-right: 30px;
 	}
 
 	h2.header1 {
@@ -146,19 +196,24 @@
 	}
 
 	h1.header2 {
-		paddding: 0;
-		padding-bottom: 60px;
+		padding: 0;
+		padding-bottom: 30px;
 		margin: 0;
 		font-size: 6rem;
 		font-style: italic;
+		color: #fff;
+	}
+
+	h1.header2:hover {
+		color: #ff0506;
 	}
 
 	nav.navbar {
-		height: 80px;
+		height: 64px;
 		width: 100vw;
 		padding: 0 30px;
 		box-sizing: border-box;
-		padding-top: 20px;
+		padding-top: 0px;
 		/* background-color: #960000; */
 		display: flex;
 		justify-content: space-evenly;
@@ -170,6 +225,11 @@
 		left: 0;
 		/* border-bottom: 2px solid rgba(255, 3, 3, 0.308); */
 	}
+
+	nav a {
+		color: #fff;
+	}
+
 	nav li {
 		font-size: 1.4rem;
 		font-weight: 600;
@@ -177,18 +237,18 @@
 		list-style-type: none;
 	}
 
-	nav li.active {
-		color: #cb0505;
-		font-weight: 600;
+	nav li a:hover {
+		color: #ff0506;
 	}
 
 	nav img {
 		align-self: center;
 		/* transform: translateY(10px); */
-		height: 100px;
+		height: 80px;
 		text-shadow: 2px 2px #000;
 		margin-right: 40vw;
-		filter: invert(1);
+		padding-top: 15px;
+		/* filter: invert(1); */
 		/* background-color: #960000; */
 	}
 
@@ -216,6 +276,13 @@
 		/* border-radius: 20px; */
 	}
 
+	h1.movie_title {
+		font-size: 3rem;
+		padding-top: 30px;
+		padding-left: 15px;
+		font-weight: 700;
+	}
+
 	p.summary {
 		font-size: 1.6rem;
 		line-height: 2.5rem;
@@ -233,10 +300,17 @@
 		box-sizing: border-box;
 		padding-right: 10vw;
 		padding-left: 10vw;
+		padding-top: 100px;
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
 	}
 
 	h1.trailer {
 		color: #fff;
+		padding-bottom: 20px;
 		font-weight: 800;
 		font-size: 4.5rem;
 		font-family: 'Secular One', sans-serif;
@@ -261,20 +335,6 @@
 		text-decoration: none;
 	}
 
-	img.thumb {
-		height: 280px;
-		box-sizing: border-box;
-		padding: 10px;
-	}
-
-	p.thumb-link {
-		font-size: 1.8rem;
-		color: #fff;
-		text-decoration: underline;
-		text-underline-offset: 4px;
-		padding-left: 10px;
-	}
-
 	/* ######################################################################################## */
 	/* ###########################          PAGE TICKETS       ################################ */
 	/* ######################################################################################## */
@@ -284,9 +344,16 @@
 		box-sizing: border-box;
 		padding-right: 10vw;
 		padding-left: 10vw;
+		padding-top: 100px;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.5) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
 	}
 
 	form {
@@ -312,9 +379,9 @@
 		cursor: pointer;
 	}
 
-	div.btn-wrapper {
+	/* div.btn-wrapper {
 		width: 100%;
-	}
+	} */
 
 	button {
 		font-size: 1.6rem;
@@ -325,15 +392,57 @@
 		color: #fff;
 		border: 2px solid #fff;
 		/* border-radius: 20px; */
-		transform: scale(0.8);
+		transform: scale(0.9);
 		margin-right: 15px;
 	}
 
 	button.btn-primary {
-		color: #000;
-		background-color: #fff;
+		color: #fff;
 		border: 2px solid #fff;
+		background-color: #000;
 		/* border-radius: 20px; */
-		/* working on an issue */
+	}
+
+	button.btn-secondary {
+		color: #fff;
+		border: 2px solid #fff;
+		background-color: #000;
+	}
+
+	/* ######################################################################################## */
+	/* ###########################          CONTACT US         ################################ */
+	/* ######################################################################################## */
+
+	.footer {
+		width: 100vw;
+		box-sizing: border-box;
+		padding-right: 10vw;
+		padding-left: 10vw;
+		padding-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		background: radial-gradient(
+			50% 50% at 50% 50%,
+			rgba(150, 0, 0, 0.3) 0%,
+			rgba(150, 0, 0, 0) 100%
+		);
+	}
+
+	.contact-links {
+		margin: 0 auto;
+		align-items: center;
+		filter: invert(1);
+	}
+
+	.contact-links img {
+		padding: 20px;
+		padding-bottom: 60px;
+	}
+
+	.cr {
+		color: #fff;
+		margin: auto;
 	}
 </style>
